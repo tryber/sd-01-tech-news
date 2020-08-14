@@ -1,5 +1,5 @@
-def top_5_news():
-    raise NotImplementedError
+def top_5_news(x, y):
+    return x * y
 
 
 def top_5_categories():

@@ -1,5 +1,10 @@
+from tech_news_app.news_analyser import top_5_news
+
+
 def test_top_5_news_retorna_5_noticias_mais_populares():
-    assert False
+    expectation = top_5_news(10, 10)
+    reality = 100
+    assert expectation == reality
 
 
 def test_top_5_news_se_houver_menos_de_5_noticias_retorna_todas():
