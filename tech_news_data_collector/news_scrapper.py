@@ -3,11 +3,39 @@ import requests
 
 from bs4 import BeautifulSoup
 
-url = "https://www.tecmundo.com.br/novidades"
+from pymongo import MongoClient
+
+from datetime import datetime
+
+
+client = MongoClient("localhost", 27017)
+
+db = client["tech_news"]
+
+collection = db["test-collection"]
 
 vermelho = "\033[31m"
 verde = "\033[32m"
-# azul = "\033[34m"
+
+url = "https://www.tecmundo.com.br/novidades?page="
+
+""" Essa função faz as chamadas de acordo com a
+    quantidade de paginas passada como argumento"""
+
+# def input_pages_map(url):
+#     print('Quantas paginas tem? ')
+#     resp = int(input())
+#     links = []
+#     for lopps in range(1, resp + 1):
+#         try:
+#             res = requests.get(url=url+str(lopps))
+#             res.raise_for_status()
+#             soup = BeautifulSoup(res.text, features="html.parser")
+#             for a in soup.find_all("a", href=True):
+#                 links.append(a["href"])
+#         except Exception as exc:
+#             error_in_output(exc, "map_articles")
+#     return list(filter(lambda x: x[-3:] == "htm", links))
 
 
 def clear(value):
@@ -73,33 +101,5 @@ def creat_(expression_list):
     return answer
 
 
-teste = creat_(map_articles(url))
-print("*+=" * 45)
-print(len(teste))
-print(teste)
-print("*+=" * 45)
-# try:
-#     res = requests.get(url=url)
-#     res.raise_for_status()
-#     soup = BeautifulSoup(res.text, features="html.parser")
-#     links = [a["href"] for a in soup.find_all("a", href=True)]
-
-#     list_articles = soup.select(".tec--card__thumb__link")
-
-#     links = [a["href"] for a in soup.find_all("a", href=True)]
-
-#     links_fatiader = list(filter(lambda x: x[-3:] == "htm", links))
-
-#     print(f"Total de artigos: {str(len(links_fatiader))}")
-#     print(links_fatiader)
-#     print(f"primeira tag: {str(list_articles)}")
-#     print(list_articles[0].getText())
-# except Exception as exc:
-#     print("*" * 30)
-#     print(f"Houve um erro: {exc}")
-#     print("*" * 30)
-# else:
-#     pass
-
-# def scrape():
-#     raise NotImplementedError
+def scrape(data):
+    print("Raspagem de notícias finalizada!")
