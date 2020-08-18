@@ -5,7 +5,17 @@ from bs4 import BeautifulSoup
 
 from database.mongo_db import DataPersistence
 
-# from pymongo import MongoClient
+
+"""
+Detalhe da importação relativo
+..database.mongo_db
+"""
+
+""" 
+importação absoluta
+from database.mongo_db 
+
+"""
 
 
 vermelho = "\033[31m"
@@ -58,6 +68,12 @@ def map_articles(url):
         error_in_output(exc, "map_articles")
 
 
+"""
+será que no bs4 tem um
+select firts or select one para pegar o primeiro elemento do array?
+"""
+
+
 def creat_(expression_list):
     answer = []
     for url in expression_list:
@@ -95,21 +111,10 @@ def creat_(expression_list):
     return answer
 
 
-# client = MongoClient("localhost", 27017)
-
-# db = client["tech_news"]
-
-# news = db["news"]
-
-first_pages = map_articles(url)
-
-by_insert = creat_(first_pages)
-
-
-def scrape(data):
+def scrape():
+    first_pages = map_articles(url)
+    data = creat_(first_pages)
     mongo = DataPersistence("tech_news", "news", data)
     return mongo.f_insert_many_bd()
     # print("Raspagem de notícias finalizada!")
 
-
-scrape(by_insert)
