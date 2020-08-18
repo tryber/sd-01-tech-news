@@ -3,16 +3,10 @@ import requests
 
 from bs4 import BeautifulSoup
 
-from pymongo import MongoClient
+from database.mongo_db import DataPersistence
 
-from datetime import datetime
+# from pymongo import MongoClient
 
-
-client = MongoClient("localhost", 27017)
-
-db = client["tech_news"]
-
-collection = db["test-collection"]
 
 vermelho = "\033[31m"
 verde = "\033[32m"
@@ -101,5 +95,21 @@ def creat_(expression_list):
     return answer
 
 
+# client = MongoClient("localhost", 27017)
+
+# db = client["tech_news"]
+
+# news = db["news"]
+
+first_pages = map_articles(url)
+
+by_insert = creat_(first_pages)
+
+
 def scrape(data):
-    print("Raspagem de notícias finalizada!")
+    mongo = DataPersistence("tech_news", "news", data)
+    return mongo.f_insert_many_bd()
+    # print("Raspagem de notícias finalizada!")
+
+
+scrape(by_insert)
