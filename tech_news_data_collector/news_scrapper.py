@@ -115,6 +115,9 @@ def scrape():
     first_pages = map_articles(url)
     data = creat_(first_pages)
     mongo = DataPersistence("tech_news", "news", data)
-    return mongo.f_insert_many_bd()
-    # print("Raspagem de notícias finalizada!")
+    resp = mongo.f_insert_many_bd()
+    if resp:
+        print("Raspagem de notícias finalizada!")
+        return resp
+    return resp
 
