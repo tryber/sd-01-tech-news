@@ -23,7 +23,6 @@ def scrape(page=1):
         timestamp = new.css(
             "div.tec--timestamp__item.z--font-semibold::text"
         ).get()
-        
         news.append({
             "url": url,
             "title": title,
