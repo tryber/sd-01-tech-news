@@ -120,4 +120,3 @@ def scrape():
         print("Raspagem de notícias finalizada!")
         return resp
     return resp
-

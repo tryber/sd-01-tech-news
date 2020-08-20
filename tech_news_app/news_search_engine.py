@@ -1,14 +1,14 @@
 def search_by_title():
-    raise NotImplementedError
+    pass
 
 
 def search_by_date():
-    raise NotImplementedError
+    pass
 
 
 def search_by_source():
-    raise NotImplementedError
+    pass
 
 
 def search_by_category():
-    raise NotImplementedError
+    pass

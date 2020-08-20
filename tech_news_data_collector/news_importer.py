@@ -2,6 +2,8 @@ from csv import DictReader
 
 from database.mongo_db import DataPersistence
 
+import pandas as pd
+
 
 def csv_importer(path):
     print(path)
@@ -16,4 +18,15 @@ def csv_importer(path):
     data = DataPersistence("tech_news", "news", datas)
     data.f_insert_many_bd()
     print("Importação realizada com sucesso")
+    pass
+
+
+def json_importer(path):
+    if not path:
+        return f"Arquivo {path} não encontrado"
+    file_json = pd.read_json(path)
+    data = DataPersistence("tech_news", "news", file_json)
+    data.f_insert_many_bd()
+    print("Importação realizada com sucesso")
+    pass
 
