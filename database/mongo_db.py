@@ -47,6 +47,15 @@ class DataPersistence:
         except ValueError as err:
             return f"\033[42mO deu erro: \033[31m {err}\033[0;0m"
 
+    def f_find_many_bd(self):
+        try:
+            client = self.client
+            db = client[self.db]
+            collections = db[self.collections]
+            return collections.find(self.data)
+        except ValueError as err:
+            return f"\033[42mO deu erro: \033[31m {err}\033[0;0m"
+
     def f_one_and_delete_bd(self):
         try:
             client = self.client

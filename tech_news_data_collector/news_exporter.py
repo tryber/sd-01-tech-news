@@ -1,8 +1,8 @@
-import pandas as pd
-
 from database.mongo_db import DataPersistence
 
 from json import dump
+
+import pandas as pd
 
 
 def csv_exporter(path):
