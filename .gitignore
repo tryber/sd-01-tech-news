@@ -1,0 +1,22 @@
+# Python
+.coverage
+__pycache__/
+.pytest_cache/
+*.py[cod]
+
+# Virtual environment folder
+.venv
+
+# VSCode repo settings
+.vscode
+# Python
+.coverage
+__pycache__/
+.pytest_cache/
+*.py[cod]
+
+# Virtual environment folder
+.venv
+
+# VSCode repo settings
+.vscode
