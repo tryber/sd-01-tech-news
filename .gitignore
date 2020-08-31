@@ -9,6 +9,7 @@ __pycache__/
 
 # VSCode repo settings
 .vscode
+
 # Python
 .coverage
 __pycache__/
