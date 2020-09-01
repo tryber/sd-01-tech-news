@@ -114,4 +114,4 @@ def scrape(pages = 1):
     print(news_data)
     print('Raspagem de notícias finalizada')
 
-scrape(1)
+scrape(3)
