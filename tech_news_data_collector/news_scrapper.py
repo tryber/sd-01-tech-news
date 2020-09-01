@@ -1,74 +1,116 @@
 from parsel import Selector
 import requests
+from pymongo import MongoClient
 
 
 URL_BASE = "https://www.tecmundo.com.br/novidades"
 
-
+   
 def scrape(number_of_pages=1):
     page_number = 1
     next_url_page = "?page=1"
+    array_of_notices = []
     while page_number <= number_of_pages:
-        response = requests.get(URL_BASE + next_url_page)
+        try:
+            response = requests.get(URL_BASE + next_url_page)
+            response.raise_for_status()
+        except (requests.ReadTimeout, requests.HTTPError):
+            return print(requests.HTTPError)
+
         selector = Selector(text=response.text)
 
         for notice in selector.css(".tec--list__item"):
-            title = notice.css(".tec--card__title__link::text").get()
             url = notice.css(".tec--card__title__link::attr(href)").get()
 
-            # Baixa o conteúdo da página de detalhes
-            detail_response = requests.get(url)
+            try:
+                detail_response = requests.get(url)
+                detail_response.raise_for_status()
+            except (requests.ReadTimeout, requests.HTTPError):
+                return print(requests.HTTPError)
+
             detail_selector = Selector(text=detail_response.text)
 
-            timestamp = detail_selector.css("#js-article-date::text").get()
+            title = detail_selector.css(
+                ".tec--article__header__title::text"
+                ).get()
+            timestamp = selector.css(
+                ".tec--timestamp__item::text"
+                ).get()
             writer = detail_selector.css(
                 ".tec--author__info__link::text"
                 ).get()
+            if writer:
+                writer = writer.strip()
             shares_count = detail_selector.css(
                 ".tec--toolbar__item::text"
-                ).get()
+                ).getall()
+            if shares_count and shares_count[1].split(" ")[4]:
+                shares_count = shares_count[1].split(" ")[4]
             comments_count = detail_selector.css(
                 "#js-comments-btn::text"
-                ).get().split(' ', 1)
+                ).getall()
+            if comments_count and comments_count[1]:
+                comments_count = comments_count[1].split(" ")[1]
             summary = detail_selector.css(
-                ".tec--article__body z--px-16 p402_premium *::text"
-                ).get()
-            sources = detail_selector.css(".tec--badge::text").getall()
-            categories = detail_selector.css(
-                ".tec--badge .tec--badge--primary::text"
-                ).get()
-            print(
-                    title,
-                    'titulo',
-                    '\n',
-                    url,
-                    'url',
-                    '\n',
-                    timestamp,
-                                     'timestamp',
-                    '\n',
-                    writer,
-                                     'writer',
-                    '\n',
-                    shares_count,
-                                     'shares_count',
-                    '\n',
-                    comments_count,
-                                     'comments_count',
-                    '\n',
-                    summary,
-                                     'summary',
-                    '\n',
-                    sources,
-                                     'sources',
-                    '\n',
-                    categories,
-                                     'categories',
-                    '\n',
-                )
+                ".tec--article__body p *::text"
+                ).getall()
+            text_summary = " ".join(summary)
+            sources_to_format = detail_selector.xpath(
+                "//a[@class='tec--badge']/text()"
+                ).getall()
+            sources = get_all(sources_to_format)
+            categories_to_format = detail_selector.css(
+                "#js-categories a::text"
+                ).getall()
+            categories = get_all(categories_to_format)
+
+            obj_data = {
+                'url': url,
+                'title': title,
+                'timestamp': timestamp,
+                'writer': writer,
+                'shares_count': shares_count,
+                'comments_count': comments_count,
+                'summary': summary,
+                'text_summary': text_summary,
+                'sources': sources,
+                'categories': categories,
+                }
+
+            if validate_data_exists(obj_data) is True:
+                array_of_notices.append(obj_data)
 
         page_number += 1
         next_url_page = f"?page={page_number}"
+
+    client = MongoClient()
+    db = client.tech_news
+    print(array_of_notices)
+    try:
+        db.notices.insert_many(array_of_notices)
+        client.close()
+    except client:
+        return print(client.errors)
+    print(len(array_of_notices))
+    print("Raspagem de notícias finalizada")
+
+
+def validate_data_exists(obj):
+    for element in obj:
+        if obj[element] is None:
+            return False
+    return True
+
+
+def format_value(value):
+    return value.strip()
+
+
+def get_all(arr):
+    if arr:
+        source = map(format_value, arr)
+        return list(source)
+    return arr
 
 
 scrape()
