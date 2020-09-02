@@ -15,10 +15,10 @@ necessary_headers = [
 
 
 def csv_importer(path_to_file):
-    if not path_to_file:
+    if file_exists(path_to_file) is False:
         return print(f"Arquivo {path_to_file} não encontrado")
 
-    if path_to_file.split(".")[2] != "csv":
+    if validate_path_file(path_to_file, "csv") is False:
         return print("Formato inválido")
 
     with open(path_to_file) as file:
@@ -64,5 +64,22 @@ def formate_arrays(array):
     return array_of_objects
 
 
-def json_importer():
-    raise NotImplementedError
+def file_exists(path):
+    if not path:
+        return False
+    True
+
+
+def validate_path_file(path, format):
+    array_of_path = path.split(".")
+    if array_of_path[1] == format:
+        return True
+    return False
+
+
+def json_importer(path_to_file):
+    if file_exists(path_to_file) is False:
+        return print(f"Arquivo {path_to_file} não encontrado")
+
+    if validate_path_file(path_to_file, "csv") is False:
+        return print("Formato inválido")

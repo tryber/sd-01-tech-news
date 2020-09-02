@@ -5,7 +5,7 @@ from pymongo import MongoClient
 
 URL_BASE = "https://www.tecmundo.com.br/novidades"
 
-   
+
 def scrape(number_of_pages=1):
     page_number = 1
     next_url_page = "?page=1"
@@ -64,7 +64,7 @@ def scrape(number_of_pages=1):
                 ).getall()
             categories = get_all(categories_to_format)
 
-            obj_data = {
+            dict_data = {
                 'url': url,
                 'title': title,
                 'timestamp': timestamp,
@@ -77,21 +77,25 @@ def scrape(number_of_pages=1):
                 'categories': categories,
                 }
 
-            if validate_data_exists(obj_data) is True:
-                array_of_notices.append(obj_data)
+            if validate_data_exists(dict_data) is True:
+                array_of_notices.append(dict_data)
 
         page_number += 1
         next_url_page = f"?page={page_number}"
 
     client = MongoClient()
     db = client.tech_news
-    print(array_of_notices)
+
     try:
-        db.notices.insert_many(array_of_notices)
+        for notice in array_of_notices:
+            db.notices.find_one_and_update(
+                {"url": notice['url']},
+                {"$set": notice},
+                upsert=True
+                )
         client.close()
-    except client:
-        return print(client.errors)
-    print(len(array_of_notices))
+    except (RuntimeError, TypeError, NameError):
+        return print(RuntimeError, TypeError, NameError)
     print("Raspagem de notícias finalizada")
 
 
