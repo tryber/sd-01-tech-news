@@ -1,6 +1,7 @@
 from parsel import Selector
 import requests
 import time
+from pymongo import MongoClient
 
 
 def get_news_title(content):
@@ -17,7 +18,7 @@ def get_news_timestamp(content):
 def get_news_writer(content):
     selector = Selector(content)
     author = selector.css(".tec--author__info__link::text").get()
-    if author == None:
+    if author is None:
         writer = selector.xpath("//div[contains(@class, 'tec--timestamp__item') and contains(@class, 'z--font-bold')]").xpath(".//a/text()").get()
         if writer:
             return writer.strip()
@@ -39,8 +40,7 @@ def get_news_shares(content):
 
 def get_news_comments(content):
     selector = Selector(content)
-    comments = selector.xpath("//button[@id='js-comments-btn']/@data-count").get()
-    return comments
+    return selector.xpath("//button[@id='js-comments-btn']/@data-count").get()
 
 
 def get_news_summary(content):
@@ -72,7 +72,8 @@ def get_news_data(url):
     attempts = 1
     while not success and attempts <= 3:
         response = requests.get(url)
-        contentEncoding = response.headers['Content-Encoding'] # Solução do Henrique Eyer pra verificar o retorno dos dados != None - https://github.com/tryber/sd-01-tech-news/tree/exemplo-tech-news-henriqueeyer
+        # Solução do Henrique Eyer pra verificar o retorno dos dados != None - https://github.com/tryber/sd-01-tech-news/tree/exemplo-tech-news-henriqueeyer
+        contentEncoding = response.headers['Content-Encoding']
         success = contentEncoding == 'gzip'
         attempts += 1
 
@@ -94,7 +95,14 @@ def get_news_data(url):
             }
 
 
-def scrape(pages = 1):
+def validate_data(data):
+    for element in data:
+        if data[element] is None:
+            return False
+        return True
+
+
+def scrape(pages=1):
     page_url = "https://www.tecmundo.com.br/novidades"
     current_page = 1
     news_data = []
@@ -105,13 +113,21 @@ def scrape(pages = 1):
 
         for news in news_url:
             data = get_news_data(news)
-            if data:
+            if data and validate_data(data):
                 news_data.append(data)
 
         current_page += 1
         page_url = f"https://www.tecmundo.com.br/novidades?page={current_page}"
+    
+    db_client = MongoClient()
+    db = db_client.tech_news
+    col = db["news"]
+    for news in news_data:
+        col.find_one_and_update({"url" : news["url"]}, {"$set": news}, upsert=True)
+    db_client.close()
 
-    print(news_data)
     print('Raspagem de notícias finalizada')
+    return news_data
 
-scrape(3)
+
+scrape()
