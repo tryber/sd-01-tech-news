@@ -118,12 +118,12 @@ def scrape(pages=1):
 
         current_page += 1
         page_url = f"https://www.tecmundo.com.br/novidades?page={current_page}"
-    
+
     db_client = MongoClient()
     db = db_client.tech_news
     col = db["news"]
     for news in news_data:
-        col.find_one_and_update({"url" : news["url"]}, {"$set": news}, upsert=True)
+        col.find_one_and_update({"url": news["url"]}, {"$set": news}, upsert=True)
     db_client.close()
 
     print('Raspagem de notícias finalizada')
