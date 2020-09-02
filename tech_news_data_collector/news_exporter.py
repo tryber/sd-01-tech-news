@@ -1,15 +1,21 @@
 import bd
 import service
-import json
+import sys
 
 
 def csv_exporter():
-    data = bd.data_return()
-    service.createFile(data, 'csv', 'item')
-    print('Exportação realizada com sucesso')
+    try:
+        data = bd.data_return()
+        service.createFile(data, 'csv', 'item')
+        print('Exportação realizada com sucesso')
+    except Exception as e:
+        print(e, file=sys.stderr)
 
 
 def json_exporter():
-    data = bd.data_return()
-    service.createFile(data, 'json', 'item')
-    print('Exportação realizada com sucesso')
+    try:
+        data = bd.data_return()
+        service.createFile(data, 'json', 'item')
+        print('Exportação realizada com sucesso')
+    except Exception as e:
+        print(e, file=sys.stderr)

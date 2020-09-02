@@ -33,4 +33,3 @@ def data_return():
     for doc in notice_data:
         allData.append(doc)
     return allData
-

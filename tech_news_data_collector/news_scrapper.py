@@ -1,9 +1,8 @@
 import requests
 import parsel
-import json
-import csv
 import service
 import sys
+
 
 dataJson = []
 

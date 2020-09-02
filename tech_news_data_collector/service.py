@@ -1,7 +1,6 @@
 import os.path
 import json
 import csv
-import sys
 
 valid_Header = ['url', 'title', 'timestamp', 'writer', 'shares_count', 'comments_count', 'summary', 'sources', 'categories']
 
@@ -37,11 +36,9 @@ def validTypeFile(file, typeFile):
 
 def createFile(value, doc, name):
     name_string = f'{name}.{doc}'
-    
     if doc == 'json':
         with open(name_string, 'w', encoding='utf-8-sig') as outfile:
             json.dump(value, outfile, indent=4, separators=(',', ': '), ensure_ascii=False)
-
     if doc == 'csv':
         with open(name_string, 'w', encoding='utf-8-sig') as file:
             writer = csv.DictWriter(file, fieldnames=valid_Header)

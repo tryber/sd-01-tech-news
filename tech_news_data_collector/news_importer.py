@@ -87,6 +87,3 @@ def init(files='data.csv'):
         csv_importer2(files)
     except Exception as e:
         print(e, file=sys.stderr)
-
-
-# init()
