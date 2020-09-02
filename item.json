@@ -1,0 +1,554 @@
+﻿[
+    {
+        "title": "Microsoft lança ferramenta que detecta deepfake em vídeos",
+        "categories": [
+            "Software",
+            "Inteligência artificial",
+            "Segurança",
+            "Microsoft"
+        ],
+        "comments_count": "3",
+        "shares_count": "5",
+        "sources": [
+            "Microsoft",
+            "TechCrunch"
+        ],
+        "summary": "A  Microsoft  anunciou nesta terça-feira (1º) uma nova ferramenta chamada Video Authenticator, capaz de identificar manipulações em vídeos conhecidas como deepfake. O projeto analisa cada quadro de vídeos e gera uma pontuação de manipulação com uma porcentagem indicando as chances de a mídia ter sido alterada.",
+        "timestamp": "2020-09-02T11:00:01",
+        "url": "https://www.tecmundo.com.br/software/177254-microsoft-lanca-ferramenta-detecta-deepfake-videos.htm",
+        "writer": "Wellington Arruda"
+    },
+    {
+        "title": "Microsoft Edge começa a testar captura de tela direto do navegador",
+        "categories": [
+            "Software",
+            "Microsoft Edge",
+            "Navegador",
+            "Internet"
+        ],
+        "comments_count": "0",
+        "shares_count": "0",
+        "sources": [
+            "Aggiornamenti Lumia"
+        ],
+        "summary": "O navegador  Microsoft Edge  deve em breve ganhar um novo recurso: um modo de captura de tela que seleciona uma fração do conteúdo exibido na janela e permite várias ações em sequência.",
+        "timestamp": "2020-09-02T09:25:04",
+        "url": "https://www.tecmundo.com.br/software/177250-microsoft-edge-comeca-testar-captura-tela-direto-navegador.htm",
+        "writer": "Nilton Kleina"
+    },
+    {
+        "title": "Apple anuncia rádio Apple Music 1 e duas novas estações",
+        "categories": [
+            "Software",
+            "Apple",
+            "Apple Music",
+            "Música"
+        ],
+        "comments_count": "0",
+        "shares_count": "0",
+        "sources": [
+            "Apple"
+        ],
+        "summary": "A  Apple  rebatizou a Apple Music Beats 1 para Apple Music 1. Conhecida por ser uma das estações de rádio mais populares da companhia, ela se mantém online desde 2015 e continua gratuita. A rádio também recebe duas novas estações para sucessos de décadas passadas e o country norte-americano.",
+        "timestamp": "2020-09-01T20:00:01",
+        "url": "https://www.tecmundo.com.br/software/158365-apple-anuncia-radio-apple-music-1-duas-novas-estacoes.htm",
+        "writer": "Igor Almenara Carneiro"
+    },
+    {
+        "title": "WhatsApp Beta para Android libera a customização de wallpapers",
+        "categories": [
+            "Software",
+            "WhatsApp",
+            "Mensageiros"
+        ],
+        "comments_count": "0",
+        "shares_count": "0",
+        "sources": [
+            "WABetaInfo"
+        ],
+        "summary": "Uma atualização do  WhatsApp  lançada no programa beta do  Google Play  libera a customização de wallpapers do aplicativo voltado a dispositivos Android. A personalização permite que o usuário adote temas que vão além dos atuais \"claro\" e \"escuro\".",
+        "timestamp": "2020-09-01T17:04:44",
+        "url": "https://www.tecmundo.com.br/software/177231-whatsapp-beta-android-libera-customizacao-wallpapers.htm",
+        "writer": "Reinaldo  Zaruvni"
+    },
+    {
+        "title": "Spyware para Android finge ser apps famosos para roubar dados",
+        "categories": [
+            "Segurança",
+            "Espionagem",
+            "Celular",
+            "Android"
+        ],
+        "comments_count": "0",
+        "shares_count": "0",
+        "sources": [
+            "Securelist"
+        ],
+        "summary": "Uma nova ameaça para celulares  Android  se disfarça de apps com conteúdo adulto ou relacionados à covid-19 para espionar a atividade no smartphone. O grupo Transparent Tribe, especializado em técnicas de engenharia social, agora explora usuários distraídos com apps parecidos com aplicativos oficiais.",
+        "timestamp": "2020-09-02T09:00:01",
+        "url": "https://www.tecmundo.com.br/seguranca/177247-spyware-android-finge-apps-famosos-para-roubar-dados.htm",
+        "writer": "Igor Almenara Carneiro"
+    },
+    {
+        "title": "As vantagens de se utilizar uma VPN segura",
+        "categories": [
+            "Internet",
+            "VPN",
+            "Segurança"
+        ],
+        "comments_count": "0",
+        "shares_count": "0",
+        "sources": [
+            ""
+        ],
+        "summary": "Você sabe o que é uma VPN? Essa é a sigla em inglês para “Rede Privada Virtual”. Como o nome pode sugerir, as VPNs são uma forma segura de acessar a internet e manter sua conexão privativa.",
+        "timestamp": "2020-08-27T13:00:00",
+        "url": "https://www.tecmundo.com.br/internet/176531-vantagens-utilizar-vpn-segura.htm",
+        "writer": "Eduardo Yukio Harada"
+    },
+    {
+        "title": "Celular da China rouba dados e dinheiro dos usuários",
+        "categories": [
+            "Segurança",
+            "Celular",
+            "Malware",
+            "Android"
+        ],
+        "comments_count": "8",
+        "shares_count": "315",
+        "sources": [
+            "BuzzFeed"
+        ],
+        "summary": "De acordo com uma reportagem do  BuzzFeed , celulares baratos fabricados pela companhia chinesa Transsion Holdings saem de fábrica com ao menos dois  malwares  pré-instalados, além de um backdoor, que permitem o roubo de dados e dinheiro dos donos dos aparelhos.",
+        "timestamp": "2020-08-26T12:00:01",
+        "url": "https://www.tecmundo.com.br/seguranca/176469-celular-china-rouba-dados-dinheiro-usuarios.htm",
+        "writer": "Ramalho Lima"
+    },
+    {
+        "title": "Você precisa de um celular de espião da CIA para ficar seguro na internet?",
+        "categories": [
+            "Segurança",
+            "Internet",
+            "Celular"
+        ],
+        "comments_count": "6",
+        "shares_count": "16",
+        "sources": [
+            ""
+        ],
+        "summary": "Se você acompanha as notícias do mundo tecnológico, certamente já ficou preocupado, em algum momento, com roubo de dados ou esquema de fraude direcionado a smartphones. Os aparelhos mais seguros do mundo certamente podem protegê-lo, mas saiba que, para isso, terá de desembolsar valores considerados exorbitantes por grande parte da população: de R$ 10 mil até mais de US$ 5 milhões, a exemplo dos dispositivos da empresa israelense CommuniTake, utilizados por políticos e funcionários da Organização das Nações Unidas (ONU).",
+        "timestamp": "2020-09-02T14:33:06",
+        "url": "https://www.tecmundo.com.br/seguranca/176322-proteger-internet-celular-superseguro.htm",
+        "writer": "Alex Franco"
+    },
+    {
+        "title": "Serasa Limpa Nome tem prazo de participação estendido até dia 8",
+        "categories": [
+            "Mercado",
+            "Governo",
+            "Internet"
+        ],
+        "comments_count": "0",
+        "shares_count": "8",
+        "sources": [
+            "UOL"
+        ],
+        "summary": "Visando auxiliar o pagamento de dívidas pendentes foi criado o  Serasa Limpa Nome , cujo prazo para participação seria finalizado na última segunda-feira (31). A ação foi estendida por mais um tempo, dando condições para ser utilizada até 8 de setembro.",
+        "timestamp": "2020-09-02T11:56:10",
+        "url": "https://www.tecmundo.com.br/mercado/177257-serasa-limpa-nome-tem-prazo-participacao-estendido-dia-08.htm",
+        "writer": "Flávio Motta Coutinho"
+    },
+    {
+        "title": "10 notícias de tecnologia para você começar o dia (02/09)",
+        "categories": [
+            "Internet",
+            "Notícias"
+        ],
+        "comments_count": "0",
+        "shares_count": "0",
+        "sources": [
+            ""
+        ],
+        "summary": "Bom dia! Separamos as principais notícias do mundo da Ciência e Tecnologia para você saber tudo o que aconteceu na última terça-feira (1). Para conferir cada notícia na íntegra, basta clicar nos  links  a seguir.",
+        "timestamp": "2020-09-02T06:00:00",
+        "url": "https://www.tecmundo.com.br/internet/177239-10-noticias-tecnologia-voce-comecar-dia-02-09.htm",
+        "writer": ""
+    },
+    {
+        "title": "Moto G9 Play, G9 Plus e E7 Plus têm preços no Brasil vazados",
+        "categories": [
+            "Dispositivos Móveis",
+            "Celular",
+            "Motorola"
+        ],
+        "comments_count": "2",
+        "shares_count": "9",
+        "sources": [
+            "Tudo Celular"
+        ],
+        "summary": "Os preços dos smartphones  Moto G9 Play ,  G9 Plus e E7 Plus  no Brasil vazaram na web. Introduzidos há poucos dias no mercado europeu, os celulares competirão no mercado intermediário e valores extrapolam a casa dos R$ 2 mil.",
+        "timestamp": "2020-09-02T15:55:09",
+        "url": "https://www.tecmundo.com.br/dispositivos-moveis/177288-moto-g9-play-g9-plus-e7-plus-tem-precos-brasil-vazados.htm",
+        "writer": "Igor Almenara Carneiro"
+    },
+    {
+        "title": "LG Wing será apresentado em evento no dia 14 de setembro",
+        "categories": [
+            "Dispositivos Móveis",
+            "LG",
+            "Celular"
+        ],
+        "comments_count": "0",
+        "shares_count": "6",
+        "sources": [
+            "LG"
+        ],
+        "summary": "A fabricante sul-coreana  LG  anunciou um evento virtual para 14 de setembro, às 11h (horário de Brasília). A conferência tem como slogan \"Descubra o Inexplorado\" e será transmitida ao vivo  pelo canal da empresa no YouTube .",
+        "timestamp": "2020-09-02T15:00:01",
+        "url": "https://www.tecmundo.com.br/dispositivos-moveis/177268-lg-wing-apresentado-evento-dia-14-setembro.htm",
+        "writer": "Nilton Kleina"
+    },
+    {
+        "title": "Poco M2 será lançado dia 8 com tela grande e bateria potente",
+        "categories": [
+            "Dispositivos Móveis",
+            "Celular",
+            "Xiaomi",
+            "POCO"
+        ],
+        "comments_count": "0",
+        "shares_count": "5",
+        "sources": [
+            "GSM Arena",
+            "Flipkart"
+        ],
+        "summary": "A  POCO , uma das principais submarcas da  Xiaomi , lançará em breve mais um celular. A companhia fará um evento na Índia em 8 de setembro para apresentar o POCO M2, que promete chegar com tela grande e bateria potente.",
+        "timestamp": "2020-09-02T12:30:01",
+        "url": "https://www.tecmundo.com.br/dispositivos-moveis/177264-poco-m2-lancado-dia-8-tela-grande-bateria-potente.htm",
+        "writer": "Mateus Mognon"
+    },
+    {
+        "title": "Galaxy Z Fold 2 chega ao Brasil em outubro com produção nacional",
+        "categories": "['Dispositivos Móveis', 'Samsung', 'Celular', 'Samsung Galaxy Z Fold 2']",
+        "comments_count": "2",
+        "shares_count": "5",
+        "sources": "[]",
+        "summary": "Nesta quarta-feira (2), a  Samsung  realizou um evento online para anunciar a chegada dos seus novos produtos da linha Galaxy ao Brasil. A grande novidade ficou por conta do  Galaxy Z Fold 2 , lançado ontem (1°) nos Estados Unidos.",
+        "timestamp": "2020-09-02T11:29:17",
+        "url": "https://www.tecmundo.com.br/dispositivos-moveis/177259-galaxy-z-fold-2-chega-brasil-outubro-producao-nacional.htm",
+        "writer": "Joy Macedo"
+    },
+    {
+        "title": "Novo carregador sem fio da Samsung aceita três aparelhos de uma vez",
+        "categories": [
+            "Produto",
+            "Carregadores",
+            "Samsung"
+        ],
+        "comments_count": "1",
+        "shares_count": "5",
+        "sources": [
+            "Sam Mobile",
+            "Samsung"
+        ],
+        "summary": "A  Samsung  apresentou nesta terça-feira (1º) uma série de novos produtos como parte do evento \"Life Unstoppable\", incluindo um monitor, uma geladeira e uma secadora de roupas inteligente.",
+        "timestamp": "2020-09-02T14:30:01",
+        "url": "https://www.tecmundo.com.br/produto/177267-novo-carregador-fio-samsung-aceita-tres-aparelhos-vez.htm",
+        "writer": "Nilton Kleina"
+    },
+    {
+        "title": "TigerLake: 11ª geração de chips Intel quer revolucionar notebooks",
+        "categories": [
+            "Produto",
+            "Intel",
+            "Processadores",
+            "Notebook"
+        ],
+        "comments_count": "2",
+        "shares_count": "10",
+        "sources": [
+            ""
+        ],
+        "summary": "A  Intel  acaba de anunciar a sua  11ª geração de processadores Core  em um evento online para todo o mundo. Os novos chips, como esperado, trazem mais performance em várias frentes, mas a empresa falou muito pouco em números brutos.",
+        "timestamp": "2020-09-02T13:47:43",
+        "url": "https://www.tecmundo.com.br/produto/177276-tigerlake-11-geracao-chips-intel-quer-revolucionar-notebooks.htm",
+        "writer": "Léo Müller"
+    },
+    {
+        "title": "Fernando de Noronha reabre para turistas que já tiveram covid-19",
+        "categories": [
+            "Ciência",
+            "Saúde",
+            "Coronavírus"
+        ],
+        "comments_count": "0",
+        "shares_count": "5",
+        "sources": [
+            "Exame"
+        ],
+        "summary": "A administração de Fernando de Noronha e o governo de Pernambuco autorizaram a retomada gradual das atividades turísticas do arquipélago com a visita de viajantes que já tiveram covid-19 e foram curados. Anunciada na última quarta-feira (27), a liberação faz parte da oitava etapa do Plano de Convivência com a doença e começou a valer ontem (1º).",
+        "timestamp": "2020-09-02T16:30:01",
+        "url": "https://www.tecmundo.com.br/ciencia/177272-fernando-noronha-reabre-turistas-tiveram-covid-19.htm",
+        "writer": "Kris Gaiato"
+    },
+    {
+        "title": "The Boys in the Band: Jim Parsons rouba a cena no primeiro trailer",
+        "categories": [
+            "Cultura Geek",
+            "Netflix",
+            "Filmes",
+            "Seriados",
+            "The Big Bang Theory"
+        ],
+        "comments_count": "0",
+        "shares_count": "0",
+        "sources": [
+            "YouTube"
+        ],
+        "summary": "A  Netflix  divulgou o primeiro trailer de  The Boys in the Band , adaptação da peça homônima escrita por Mart Crowley. Estrelada por Jim Parsons ( The Big Bang Theory ), a história gira em torno de um grupo de amigos gays que se reúnem para comemorar um de seus aniversários, mas têm a festa interrompida quando o colega de quarto do anfitrião aparece sem ser convidado. Confira o vídeo.",
+        "timestamp": "2020-09-02T16:16:37",
+        "url": "https://www.tecmundo.com.br/cultura-geek/177291-the-boys-in-the-band-jim-parsons-rouba-cena-primeiro-trailer.htm",
+        "writer": "Robinson Samulak Alves"
+    },
+    {
+        "title": "Neon Pagamentos recebe investimento de R$ 1,6 bilhão",
+        "categories": [
+            "Mercado",
+            "Banco"
+        ],
+        "comments_count": "0",
+        "shares_count": "5",
+        "sources": [
+            "Valor",
+            "Crunchbase"
+        ],
+        "summary": "O banco digital brasileiro Neon Pagamentos recebeu um aporte financeiro de R$ 1,6 bilhão recentemente. A quantia é a maior recebida pela instituição desde a sua criação, em 2016, e eleva o montante total arrecadado pela empresa para US$ 420 mil (R$ 2,2 bilhões).",
+        "timestamp": "2020-09-02T16:13:00",
+        "url": "https://www.tecmundo.com.br/mercado/177290-neon-pagamentos-recebe-investimento-r-1-6-bilhao.htm",
+        "writer": "Mateus Mognon"
+    },
+    {
+        "title": "NASA patenteia nova rota mais rápida e barata para a Lua",
+        "categories": [
+            "Ciência",
+            "Exploração espacial",
+            "NASA",
+            "Patente"
+        ],
+        "comments_count": "5",
+        "shares_count": "5",
+        "sources": [
+            "Business Insider",
+            "NASA"
+        ],
+        "summary": "Um registro publicado pelo Escritório de Patentes e Marcas dos Estados Unidos recentemente chamou atenção mesmo não revelando um equipamento ou uma  tecnologia . Trata-se de uma nova trajetória para a Lua, desenvolvida por engenheiros da  NASA . A rota inédita para as viagens ao satélite natural permite economizar dinheiro, tempo e combustível, além de propiciar descobertas sem precedentes a respeito do Universo para a primeira missão a explorá-la.",
+        "timestamp": "2020-09-02T16:00:00",
+        "url": "https://www.tecmundo.com.br/ciencia/177270-nasa-patenteia-nova-rota-rapida-barata-lua.htm",
+        "writer": "André Luiz Dias Gonçalves"
+    },
+    {
+        "title": "Carros elétricos poluem menos que os convencionais, diz estudo",
+        "categories": [
+            "Mobilidade Urbana/Smart Cities",
+            "Carro",
+            "Elétricos",
+            "Veículos",
+            "Bateria"
+        ],
+        "comments_count": "5",
+        "shares_count": "6",
+        "sources": [
+            "Electrek",
+            "Unsplash: thumb"
+        ],
+        "summary": "Um novo estudo sobre a emissão de gases poluentes por automóveis  elétricos  e movidos a combustíveis fósseis indicou que as opções elétricas são realmente menos poluentes que as convencionais quando se comparam  veículos  de mesma categoria. Basicamente, a pesquisa apontou inúmeras falhas em estudos anteriores conduzidos por montadoras e companhias do setor de petróleo e gás.",
+        "timestamp": "2020-09-02T15:30:01",
+        "url": "https://www.tecmundo.com.br/mobilidade-urbana-smart-cities/177271-carros-eletricos-poluem-convencionais-diz-estudo.htm",
+        "writer": "Ramalho Lima"
+    },
+    {
+        "title": "Intel mostra sua nova logo junto com CPUs Tiger Lake 11ª geração",
+        "categories": [
+            "Mercado",
+            "Intel",
+            "Processadores"
+        ],
+        "comments_count": "0",
+        "shares_count": "0",
+        "sources": [
+            "The Verge"
+        ],
+        "summary": "A Intel  acaba de anunciar sua 11ª geração de processadores Intel Core , a conhecida linha Tiger Lake. Em meio aos anúncios econômicos em detalhes e o empolgante padrão “Intel EVO” de qualidade, a marca se apresentou com uma nova logo.",
+        "timestamp": "2020-09-02T14:51:44",
+        "url": "https://www.tecmundo.com.br/mercado/177279-intel-mostra-nova-junto-cpus-tiger-lake-11-geracao.htm",
+        "writer": "Igor Almenara Carneiro"
+    },
+    {
+        "title": "Samsung lança Galaxy Fit 2, pulseira com bateria de 15 dias",
+        "categories": [
+            "Produto",
+            "Samsung",
+            "Smartband",
+            "Produtos"
+        ],
+        "comments_count": "0",
+        "shares_count": "0",
+        "sources": [
+            "SamMobile",
+            "Samsung"
+        ],
+        "summary": "A  Samsung  anunciou a nova pulseira inteligente Galaxy Fit 2 para rastrear atividades físicas. Normalmente mais acessível do que os relógios inteligentes, ela traz a promessa de autonomia de bateria de até 15 dias com uma única carga.",
+        "timestamp": "2020-09-02T13:30:01",
+        "url": "https://www.tecmundo.com.br/produto/177266-samsung-lanca-galaxy-fit-2-pulseira-bateria-15-dias.htm",
+        "writer": "Wellington Arruda"
+    },
+    {
+        "title": "ASUS ZenFone 7 [Unboxing | Hands-on]",
+        "categories": [
+            "Dispositivos Móveis",
+            "ASUS ZenFone 7",
+            "Asus",
+            "Celular"
+        ],
+        "comments_count": "0",
+        "shares_count": "0",
+        "sources": [
+            ""
+        ],
+        "summary": "Para a alegria dos fãs  – e  também dos haters  –  da  ASUS , a empresa finalmente lançou o novo ZenFone 7. Na verdade, ela lançou dois aparelhos: o  ZenFone 7  e o  Zenfone 7 Pro . Por enquanto, ainda não existe uma previsão de quando (ou se) eles vão chegar aqui no Brasil.",
+        "timestamp": "2020-09-02T17:11:19",
+        "url": "https://www.tecmundo.com.br/dispositivos-moveis/177295-asus-zenfone-7-unboxing-hands-on.htm",
+        "writer": "Joy Macedo"
+    },
+    {
+        "title": "Galaxy Buds Live e Galaxy Watch 3 são lançados no Brasil",
+        "categories": [
+            "Produto",
+            "Samsung",
+            "Samsung Galaxy Watch 3",
+            "Samsung Galaxy Buds Live"
+        ],
+        "comments_count": "0",
+        "shares_count": "5",
+        "sources": [
+            ""
+        ],
+        "summary": "Nesta quarta-feira (02), a Samsung anunciou a chegada dos novos produtos da linha Galaxy ao Brasil. Entre as novidades estão Watch 3, fones Buds Live, Galaxy Note 20, Note 20 Ultra, Tab S7 e Tab S7+.",
+        "timestamp": "2020-09-02T11:18:53",
+        "url": "https://www.tecmundo.com.br/produto/177258-galaxy-buds-live-galaxy-watch-3-lancados-brasil.htm",
+        "writer": "Joy Macedo"
+    },
+    {
+        "title": "Apple é acusada de tratamento desigual ao cobrar os 30% da App Store",
+        "categories": [
+            "Mercado",
+            "Apple",
+            "App Store",
+            "Apps",
+            "iOS"
+        ],
+        "comments_count": "0",
+        "shares_count": "0",
+        "sources": [
+            "9to5Mac",
+            "Developers iA"
+        ],
+        "summary": "Em um novo capítulo da  batalha contra a taxa de 30%  cobrada pela Apple sobre os rendimentos gerados pelos aplicativos comercializados na App Store, um grupo de desenvolvedores ressaltou supostas controvérsias nas diretrizes da empresa. Em carta aberta, o Developers iA, cuja clientela é composta de nomes como Nikkei, Vogue e Red Bull, acusa a Maçã de tratamento desigual e diz que as imposições mudam conforme os interesses da companhia.",
+        "timestamp": "2020-09-02T17:00:01",
+        "url": "https://www.tecmundo.com.br/mercado/177281-apple-acusada-tratamento-desigual-cobrar-30-app-store.htm",
+        "writer": "Reinaldo  Zaruvni"
+    },
+    {
+        "title": "Conheça o lobo-guará, animal que estampa a nota de 200 reais",
+        "categories": [
+            "Ciência",
+            "Biologia",
+            "Dinheiro",
+            "Meio ambiente",
+            "Governo"
+        ],
+        "comments_count": "0",
+        "shares_count": "0",
+        "sources": [
+            "Agência Brasil",
+            "Brasil Escola"
+        ],
+        "summary": "No final de julho, o lobo-guará virou o assunto do momento entre os internautas brasileiros, após ser anunciado pelo Banco Central como a estrela da  nova cédula de R$ 200 , que entrou em circulação nesta quarta-feira (02). Já que esse animal vai ocupar um lugar especial no seu bolso nos próximos anos, que tal conhecê-lo um pouco mais?",
+        "timestamp": "2020-09-02T13:46:29",
+        "url": "https://www.tecmundo.com.br/ciencia/177275-conheca-lobo-guara-animal-estampa-nota-200-reais.htm",
+        "writer": "Kris Gaiato"
+    },
+    {
+        "title": "JBL lança fones true wireless com ANC e caixas de som",
+        "categories": [
+            "Produto",
+            "JBL",
+            "Aparelhos de som",
+            "Fone de ouvido"
+        ],
+        "comments_count": "0",
+        "shares_count": "3",
+        "sources": [
+            "Android Police",
+            "JBL",
+            "JBL"
+        ],
+        "summary": "Em um evento online realizado nesta quarta-feira (2), a  JBL  apresentou uma série de novidades para as suas linhas de  fones de ouvido  e  caixas de som , que atendem a diferentes necessidades.",
+        "timestamp": "2020-09-02T17:30:01",
+        "url": "https://www.tecmundo.com.br/produto/177284-jbl-lanca-fones-true-wireless-cancelamento-ruido-ativo.htm",
+        "writer": "André Luiz Dias Gonçalves"
+    },
+    {
+        "title": "Nvidia vaza preços das placas RTX 3070, 3080 e 3090 no Brasil",
+        "categories": [
+            "Produto",
+            "Placa de vídeo",
+            "NVIDIA"
+        ],
+        "comments_count": "0",
+        "shares_count": "0",
+        "sources": [
+            "Adrenaline"
+        ],
+        "summary": "As placas Nvidia GeForce RTX 3000,  anunciadas  na última terça-feira (1º), ainda não têm preços revelados para o mercado brasileiro, tampouco data de chegada oficial. Entretanto, um “deslize” da companhia listou possíveis valores das placas RTX 3070, RTX 3080 e RTX 3090 na moeda nacional.",
+        "timestamp": "2020-09-02T17:19:08",
+        "url": "https://www.tecmundo.com.br/produto/177298-nvidia-vaza-precos-placas-rtx-3070-3080-3090-brasil.htm",
+        "writer": "Igor Almenara Carneiro"
+    },
+    {
+        "title": "Aniversário Submarino: cupons de até R$ 200 e cashback poderoso",
+        "categories": [
+            "Mercado",
+            "Promoção",
+            "Loja digital",
+            "Descontos"
+        ],
+        "comments_count": "0",
+        "shares_count": "0",
+        "sources": [
+            ""
+        ],
+        "summary": "O  Submarino  vai completar mais 1 ano de vida, e o aniversário da loja virtual promete oferecer muitas vantagens para o consumidor. Se você está namorado um smartphone, um livro, um jogo, um eletrodoméstico, um computador ou qualquer outro produto oferecido pelo e-commerce, agora é a hora de garantir a compra com a melhor condição possível.",
+        "timestamp": "2020-09-02T17:42:05",
+        "url": "https://www.tecmundo.com.br/mercado/177300-aniversario-submarino-cupons-r-200-cashback-poderoso.htm",
+        "writer": "Eduardo Yukio Harada"
+    },
+    {
+        "title": "Pilotos relatam homem voando com jetpack em aeroporto dos EUA",
+        "categories": [
+            "Mobilidade Urbana/Smart Cities",
+            "Jet Pack",
+            "Avião"
+        ],
+        "comments_count": "0",
+        "shares_count": "0",
+        "sources": [
+            "LA Times",
+            "CNN"
+        ],
+        "summary": "Uma pessoa ainda não identificada sobrevoou a região do Aeroporto Internacional de Los Angeles na noite do último domingo (31) usando um  jetpack  e passando perigosamente perto de aviões. O piloto misterioso foi relatado por duas aeronaves diferentes à torre de comando do local.",
+        "timestamp": "2020-09-02T17:14:14",
+        "url": "https://www.tecmundo.com.br/mobilidade-urbana-smart-cities/177296-pilotos-relatam-homem-voando-jetpack-aeroporto-eua.htm",
+        "writer": "Nilton Kleina"
+    }
+]

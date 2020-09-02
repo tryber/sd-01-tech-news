@@ -3,22 +3,23 @@ import parsel
 import json
 import csv
 import service
+import sys
 
 dataJson = []
 
 
 def getAllLinks(url):
-    print(url)
     response = requests.get(url)
     selector = parsel.Selector(response.text)
     linksNotice = selector.xpath("//a[@class='tec--card__title__link']/@href").getall()
-    print(linksNotice)
     return linksNotice
 
 
-def getTitle(content):
+def getTitle(content, link):
     selector = parsel.Selector(content)
     title = selector.xpath("//h1[@class='tec--article__header__title']/text()").get()
+    if not title:
+        print(link)
     return title.strip()
 
 
@@ -85,7 +86,7 @@ def getData(content, link):
         return
     objData = {
         "url": link,
-        "title": getTitle(content),
+        "title": getTitle(content, link),
         "timestamp": getTimestamp(content),
         "writer": getWriter(content),
         "shares_count": getSharesCount(content),
@@ -120,26 +121,35 @@ def scrape(num=1):
     while repeat <= num:
         if repeat == 1:
             getAllData("https://www.tecmundo.com.br/novidades/")
-            print('aq')
         else:
             getAllData("https://www.tecmundo.com.br/novidades?page=2")
-            print('aq2')
         print(repeat)
         repeat += 1
-    # print(dataJson, 'dataJson')
-    createFile(dataJson)
+    service.createFile(dataJson, 'json', 'data')
     print('Raspagem de notícias finalizada')
 
 
-def createFile(value):
-    with open('data.json', 'w', encoding='utf-8-sig') as outfile:
-        json.dump(value, outfile, indent=4, separators=(',', ': '), ensure_ascii=False)
-    with open('data.csv', 'w', encoding='utf-8-sig') as file:
-        fieldnames = service.valid_Header
-        writer = csv.DictWriter(file, fieldnames=fieldnames)
-        writer.writeheader()
-        for item in value:
-            writer.writerow(item)
+def scrape2(url, num=1):
+    next_page_url = url
+    repeat = 1
+    while repeat <= num:
+        print(next_page_url)
+        print(f'Page {repeat}')
+        response = requests.get(next_page_url)
+        getAllData(next_page_url)
+        selector = parsel.Selector(text=response.text)
+        next_page_url = selector.css(".tec--btn::attr(href)").get()
+        print(f'Finish page {repeat}')
+        repeat += 1
+        if not next_page_url:
+            repeat = num
+    service.createFile(dataJson, 'json', 'data')
+    service.createFile(dataJson, 'csv', 'data')
+    print('Raspagem de notícias finalizada')
 
 
-scrape(2)
+def init(file='data.csv'):
+    try:
+        scrape2('https://www.tecmundo.com.br/novidades/', 2)
+    except Exception as e:
+        print(e, file=sys.stderr)

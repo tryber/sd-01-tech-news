@@ -1,4 +1,7 @@
 import os.path
+import json
+import csv
+import sys
 
 valid_Header = ['url', 'title', 'timestamp', 'writer', 'shares_count', 'comments_count', 'summary', 'sources', 'categories']
 
@@ -31,3 +34,27 @@ def validTypeFile(file, typeFile):
         raise Exception('Formato inválido')
     return True
 
+
+def createFile(value, doc, name):
+    name_string = f'{name}.{doc}'
+    
+    if doc == 'json':
+        with open(name_string, 'w', encoding='utf-8-sig') as outfile:
+            json.dump(value, outfile, indent=4, separators=(',', ': '), ensure_ascii=False)
+
+    if doc == 'csv':
+        with open(name_string, 'w', encoding='utf-8-sig') as file:
+            writer = csv.DictWriter(file, fieldnames=valid_Header)
+            writer.writeheader()
+            for item in value:
+                writer.writerow(item)
+
+
+def transform_arr(value):
+    print(value)
+    str1 = value.replace(']', '').replace('[', '')
+    lastValue = str1.replace('"', '').replace("'", "").replace(", ", ",").split(",")
+    for item in lastValue:
+        print(item)
+        item = item.strip()
+    return lastValue
