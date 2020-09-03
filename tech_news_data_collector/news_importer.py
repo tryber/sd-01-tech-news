@@ -1,5 +1,7 @@
 import csv
 from pymongo import MongoClient
+import json
+
 
 necessary_headers = [
     "url",
@@ -10,7 +12,7 @@ necessary_headers = [
     "comments_count",
     "summary",
     "sources",
-    "categories"
+    "categories",
 ]
 
 
@@ -27,18 +29,21 @@ def csv_importer(path_to_file):
 
     intersection = set(header) & set(necessary_headers)
 
-    if(len(intersection) != 9):
+    if len(intersection) != 9:
         return print("Cabeçalho inválido")
 
     for row in data:
-        if(len(row) != 9):
+        if len(row) != 9:
             return print(f"Erro na notícia {row[0]}")
 
     array_formated = formate_arrays(data)
     client = MongoClient()
     db = client.tech_news
     try:
-        db.notices.updateMany(array_formated, upsert=True)
+        for notice in array_formated:
+            db.notices.find_one_and_update(
+                {"url": notice["url"]}, {"$set": notice}, upsert=True
+            )
         client.close()
     except client:
         print(client.errors)
@@ -58,8 +63,8 @@ def formate_arrays(array):
             "comments_count": line[5],
             "summary": line[6],
             "sources": line[7],
-            "categories": line[8]
-            }
+            "categories": line[8],
+        }
         array_of_objects.append(newObj)
     return array_of_objects
 
@@ -77,9 +82,30 @@ def validate_path_file(path, format):
     return False
 
 
-def json_importer(path_to_file):
+def json_importer(path_to_file="teste.json"):
     if file_exists(path_to_file) is False:
         return print(f"Arquivo {path_to_file} não encontrado")
 
-    if validate_path_file(path_to_file, "csv") is False:
+    if validate_path_file(path_to_file, "json") is False:
         return print("Formato inválido")
+
+    with open(path_to_file) as file:
+        notices = json.load(file)
+        for row in notices:
+            if len(row) != 9:
+                return print(f"Erro na notícia {row[0]}")
+
+    client = MongoClient()
+    db = client.tech_news
+    try:
+        for notice in notices:
+            db.notices.find_one_and_update(
+                {"url": notice["url"]}, {"$set": notice}, upsert=True
+            )
+        client.close()
+    except client:
+        print(client.errors)
+    print("Importação realizada com sucesso")
+
+
+json_importer()

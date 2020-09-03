@@ -30,52 +30,43 @@ def scrape(number_of_pages=1):
 
             detail_selector = Selector(text=detail_response.text)
 
-            title = detail_selector.css(
-                ".tec--article__header__title::text"
-                ).get()
-            timestamp = selector.css(
-                ".tec--timestamp__item::text"
-                ).get()
-            writer = detail_selector.css(
-                ".tec--author__info__link::text"
-                ).get()
+            title = (
+                detail_selector.css(".tec--article__header__title::text").get()
+            )
+            if title:
+                title = title.strip()
+            timestamp = selector.css(".tec--timestamp__item::text").get()
+            writer = detail_selector.css(".tec--author__info__link::text").get()
             if writer:
                 writer = writer.strip()
-            shares_count = detail_selector.css(
-                ".tec--toolbar__item::text"
-                ).getall()
+            shares_count = detail_selector.css(".tec--toolbar__item::text").getall()
             if shares_count and shares_count[1].split(" ")[4]:
                 shares_count = shares_count[1].split(" ")[4]
-            comments_count = detail_selector.css(
-                "#js-comments-btn::text"
-                ).getall()
-            if comments_count and comments_count[1]:
-                comments_count = comments_count[1].split(" ")[1]
-            summary = detail_selector.css(
-                ".tec--article__body p *::text"
-                ).getall()
-            text_summary = " ".join(summary)
+            comments_count = detail_selector.css("#js-comments-btn::text").getall()
+            if comments_count:
+                comments_count = get_all_comments_count(comments_count)
+            summary = detail_selector.css(".tec--article__body p *::text").getall()
+            text_summary = get_all_summary(summary)
             sources_to_format = detail_selector.xpath(
                 "//a[@class='tec--badge']/text()"
-                ).getall()
+            ).getall()
             sources = get_all(sources_to_format)
             categories_to_format = detail_selector.css(
                 "#js-categories a::text"
-                ).getall()
+            ).getall()
             categories = get_all(categories_to_format)
 
             dict_data = {
-                'url': url,
-                'title': title,
-                'timestamp': timestamp,
-                'writer': writer,
-                'shares_count': shares_count,
-                'comments_count': comments_count,
-                'summary': summary,
-                'text_summary': text_summary,
-                'sources': sources,
-                'categories': categories,
-                }
+                "url": url,
+                "title": title,
+                "timestamp": timestamp,
+                "writer": writer,
+                "shares_count": shares_count,
+                "comments_count": comments_count,
+                "summary": text_summary,
+                "sources": sources,
+                "categories": categories,
+            }
 
             if validate_data_exists(dict_data) is True:
                 array_of_notices.append(dict_data)
@@ -89,14 +80,27 @@ def scrape(number_of_pages=1):
     try:
         for notice in array_of_notices:
             db.notices.find_one_and_update(
-                {"url": notice['url']},
-                {"$set": notice},
-                upsert=True
-                )
+                {"url": notice["url"]}, {"$set": notice}, upsert=True
+            )
         client.close()
     except (RuntimeError, TypeError, NameError):
         return print(RuntimeError, TypeError, NameError)
     print("Raspagem de notícias finalizada")
+
+
+# parte da solução do código do Conrado https://github.com/tryber/sd-01-tech-news/blob/fd142068f2c78e0c857fd17947171e46c5a7da36/tech_news_data_collector/news_scrapper.py
+def get_all_summary(value):
+    text_summary = " ".join(value)
+    return text_summary
+
+
+def get_all_comments_count(value):
+    if len(value) > 0:
+        comments_split = value[1]
+        if len(comments_split) > 15:
+            return comments_split.split(" ")[6]
+        else:
+            return comments_split.split(" ")[2]
 
 
 def validate_data_exists(obj):
