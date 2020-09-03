@@ -16,7 +16,7 @@ necessary_headers = [
 ]
 
 
-def csv_importer(path_to_file):
+def csv_importer(path_to_file="teste.csv"):
     if file_exists(path_to_file) is False:
         return print(f"Arquivo {path_to_file} não encontrado")
 
@@ -24,17 +24,20 @@ def csv_importer(path_to_file):
         return print("Formato inválido")
 
     with open(path_to_file) as file:
-        file_status = csv.reader(file, delimiter=",")
+        file_status = csv.reader(file, delimiter=";")
         header, *data = file_status
 
     intersection = set(header) & set(necessary_headers)
 
     if len(intersection) != 9:
+        print(intersection)
         return print("Cabeçalho inválido")
 
+    number_line = 1
     for row in data:
         if len(row) != 9:
-            return print(f"Erro na notícia {row[0]}")
+            return print(f"Erro na notícia {number_line}")
+        number_line += 1
 
     array_formated = formate_arrays(data)
     client = MongoClient()
@@ -93,6 +96,7 @@ def json_importer(path_to_file="teste.json"):
         notices = json.load(file)
         for row in notices:
             if len(row) != 9:
+                print(len(row))
                 return print(f"Erro na notícia {row[0]}")
 
     client = MongoClient()
@@ -108,4 +112,4 @@ def json_importer(path_to_file="teste.json"):
     print("Importação realizada com sucesso")
 
 
-json_importer()
+csv_importer()

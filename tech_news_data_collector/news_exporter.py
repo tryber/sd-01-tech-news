@@ -12,7 +12,7 @@ necessary_headers = [
     "comments_count",
     "summary",
     "sources",
-    "categories",
+    "categories"
 ]
 
 
@@ -22,13 +22,12 @@ def csv_exporter(path_to_file="teste.csv"):
 
     notices = get_data_from_database()
     with open(f"{path_to_file}", "w") as file:
-        writer = csv.writer(file, delimiter=";")
+        writer = csv.writer(file, delimiter=';')
         writer.writerow(necessary_headers)
         for notice in notices:
             array_of_elements = []
             for header in necessary_headers:
                 array_of_elements.append(notice[header])
-            print(array_of_elements)
             writer.writerow(array_of_elements)
     print("Exportação realizada com sucesso")
 
@@ -56,9 +55,8 @@ def get_data_from_database():
     db = client.tech_news
     array_of_notices = []
     try:
-        notices = db.notices.find({})
+        notices = db.notices.find({}, {"_id": 0})
         for notice in notices:
-            notice["_id"] = str(notice["_id"]).split("'")[0]
             array_of_notices.append(notice)
         client.close()
         return array_of_notices
