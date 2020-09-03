@@ -62,6 +62,3 @@ def get_data_from_database():
         return array_of_notices
     except client:
         return print(client.errors)
-
-
-csv_exporter()

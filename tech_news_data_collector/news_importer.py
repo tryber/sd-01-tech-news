@@ -96,7 +96,6 @@ def json_importer(path_to_file="teste.json"):
         notices = json.load(file)
         for row in notices:
             if len(row) != 9:
-                print(len(row))
                 return print(f"Erro na notícia {row[0]}")
 
     client = MongoClient()
@@ -110,6 +109,3 @@ def json_importer(path_to_file="teste.json"):
     except client:
         print(client.errors)
     print("Importação realizada com sucesso")
-
-
-csv_importer()
