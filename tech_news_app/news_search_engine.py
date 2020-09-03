@@ -41,17 +41,18 @@ def search_by_date(date):
     if validate_date(date) is False:
         return print("Data inválida")
     formated_date = format_date(date)
-    print(formated_date)
     received_data = get_data_from_database({"timestamp": formated_date})
     return received_data
 
 
-def search_by_source():
-    raise NotImplementedError
+def search_by_source(source):
+    received_data = get_data_from_database({"sources": {"$in": [source]}})
+    print(received_data)
+    return received_data
 
 
 def search_by_category():
     raise NotImplementedError
 
 
-search_by_date("2020/09/03")
+search_by_source("Nature")

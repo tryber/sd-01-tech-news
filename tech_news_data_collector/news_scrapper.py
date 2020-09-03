@@ -119,3 +119,6 @@ def get_all(arr):
         source = map(format_value, arr)
         return list(source)
     return arr
+
+
+scrape()
