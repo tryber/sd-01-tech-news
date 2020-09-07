@@ -12,8 +12,11 @@ def get_all_title(value):
 
 def get_all_timestamp(value):
     selector = Selector(value)
-    timestamp = selector.css(".tec--timestamp__item::text").get()
-    return timestamp
+    timestamp = selector.css(
+        ".tec--timestamp__item").xpath('./time/@datetime').get()
+    timestamp_split = timestamp.split("T")
+    if timestamp_split:
+        return timestamp_split[0]
 
 
 def get_all_writer(value):
@@ -75,7 +78,8 @@ def get_all(arr):
     return arr
 
 
-# Parte da solução do código do Guilherme https://github.com/tryber/sd-01-tech-news/blob/guiiluiz-tech-news/tech_news_data_collector/news_scrapper.py
+# Parte da solução do código do Guilherme
+# https://github.com/tryber/sd-01-tech-news/blob/guiiluiz-tech-news/tech_news_data_collector/news_scrapper.py
 def scrape(pages=1):
     page_url = "https://www.tecmundo.com.br/novidades"
     current_page = 1
@@ -113,7 +117,8 @@ def get_news_data(url):
     attempts = 1
     while not success and attempts <= 3:
         response = requests.get(url)
-        # Parte da Solução do Henrique Eyer pra verificar o retorno dos dados != None - https://github.com/tryber/sd-01-tech-news/tree/exemplo-tech-news-henriqueeyer
+        # Parte da Solução do Henrique Eyer != None -
+        # https://github.com/tryber/sd-01-tech-news/tree/exemplo-tech-news-henriqueeyer
         contentEncoding = response.headers['Content-Encoding']
         success = contentEncoding == 'gzip'
         attempts += 1
