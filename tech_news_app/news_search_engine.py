@@ -62,8 +62,10 @@ def search_by_source(source):
     return received_data
 
 
-search_by_source("GSM Arena")
+def search_by_category(categories):
+    received_data = get_data_from_database({"categories": categories})
+    print("categories", received_data)
+    return received_data
 
 
-def search_by_category():
-    raise NotImplementedError
+search_by_category("Cultura Geek")
