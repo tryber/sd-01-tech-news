@@ -1,4 +1,5 @@
 from parsel import Selector
+from pymongo import MongoClient
 import requests
 import time
 
@@ -92,11 +93,22 @@ def scrape(pages=1):
         current_page += 1
         page_url = f"https://www.tecmundo.com.br/novidades?page={current_page}"
 
-    print(news_data)
+    db_client = MongoClient()
+    db = db_client.tech_news
+    col = db["news"]
+    for news in news_data:
+        col.find_one_and_update(
+            {"url": news["url"]}, {"$set": news}, upsert=True
+            )
+    db_client.close()
+
     print('Raspagem de notícias finalizada')
+    return news_data
 
 
 def get_news_data(url):
+    if '/minha-serie/' in url:
+        return
     success = False
     attempts = 1
     while not success and attempts <= 3:

@@ -1,9 +1,6 @@
 from pymongo import MongoClient
 import json
-
-
-def csv_importer():
-    raise NotImplementedError
+import sys
 
 
 def file_exists(path):
@@ -19,7 +16,7 @@ def validate_path_file(path, format):
     return False
 
 
-def json_importer(path_to_file="json_file.json"):
+def json_importer(path_to_file="tech_news.json"):
     if file_exists(path_to_file) is False:
         return print(f"Arquivo {path_to_file} não encontrado")
 
@@ -40,6 +37,7 @@ def json_importer(path_to_file="json_file.json"):
                 {"url": notice["url"]}, {"$set": notice}, upsert=True
             )
         client.close()
-    except client:
-        print(client.errors)
+    except Exception as e:
+        print(e, file=sys.stderr)
+
     print("Importação realizada com sucesso")
