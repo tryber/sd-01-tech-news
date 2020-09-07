@@ -3,10 +3,6 @@ import requests
 import time
 
 
-URL_BASE = "https://www.tecmundo.com.br/novidades"
-# Define a primeira página como próxima a ter seu conteúdo recuperado
-
-
 def get_all_title(value):
     selector = Selector(value)
     title = selector.css(".tec--article__header__title::text").get().strip()
@@ -78,7 +74,7 @@ def get_all(arr):
     return arr
 
 
-# parte da solução do código do Guilherme https://github.com/tryber/sd-01-tech-news/blob/guiiluiz-tech-news/tech_news_data_collector/news_scrapper.py
+# Parte da solução do código do Guilherme https://github.com/tryber/sd-01-tech-news/blob/guiiluiz-tech-news/tech_news_data_collector/news_scrapper.py
 def scrape(pages=1):
     page_url = "https://www.tecmundo.com.br/novidades"
     current_page = 1
@@ -105,7 +101,7 @@ def get_news_data(url):
     attempts = 1
     while not success and attempts <= 3:
         response = requests.get(url)
-        # Solução do Henrique Eyer pra verificar o retorno dos dados != None - https://github.com/tryber/sd-01-tech-news/tree/exemplo-tech-news-henriqueeyer
+        # Parte da Solução do Henrique Eyer pra verificar o retorno dos dados != None - https://github.com/tryber/sd-01-tech-news/tree/exemplo-tech-news-henriqueeyer
         contentEncoding = response.headers['Content-Encoding']
         success = contentEncoding == 'gzip'
         attempts += 1
