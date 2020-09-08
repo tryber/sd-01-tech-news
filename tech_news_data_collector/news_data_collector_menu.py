@@ -1,6 +1,6 @@
 from news_exporter import json_exporter
 from news_importer import json_importer
-# from news_scrapper import scrape
+from news_scrapper import scrape
 import sys
 
 
@@ -24,7 +24,7 @@ def instruction2(choice):
     instruct2 = {
         "1": json_importer(write_input),
         "2": json_exporter(write_input),
-        # "3": scrape(write_input),
+        "3": scrape(write_input),
     }
     return instruct2[str(choice)](write_input)
 
