@@ -57,3 +57,9 @@ def search_by_date(date):
     received_data = get_data_from_database({"timestamp": formated_date})
     print("date", received_data)
     return received_data
+
+
+def search_by_source(source):
+    received_data = get_data_from_database({"sources": source})
+    print("source", received_data)
+    return received_data
