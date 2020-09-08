@@ -10,7 +10,6 @@ def get_data_from_database(search):
     array_of_notices = []
     try:
         notices = db.news.find(search, {"_id": 0, "title": 1, "url": 1})
-        print("notices", notices)
         for notice in notices:
             array_of_notices.append(notice)
         client.close()
@@ -21,12 +20,12 @@ def get_data_from_database(search):
 
 def validate_title(title):
     if len(title) == 0:
-        return []
+        return False
 
 
 def search_by_title(title):
-    if validate_title(title) == []:
-        return print("dados invalidos")
+    if validate_title(title) is False:
+        return print("Dados inválidos")
     received_data = get_data_from_database(
         {"title": {"$regex": title, "$options": "i"}}
         )
@@ -60,12 +59,16 @@ def search_by_date(date):
 
 
 def search_by_source(source):
-    received_data = get_data_from_database({"sources": source})
+    received_data = get_data_from_database(
+        {"sources": {"$regex": f"^{source}", "$options": "i"}}
+        )
     print("source", received_data)
     return received_data
 
 
 def search_by_category(categories):
-    received_data = get_data_from_database({"categories": categories})
+    received_data = get_data_from_database(
+        {"categories": {"$regex": f"^{categories}", "$options": "i"}}
+        )
     print("categories", received_data)
     return received_data
