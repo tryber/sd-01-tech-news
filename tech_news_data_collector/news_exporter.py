@@ -2,6 +2,9 @@ from pymongo import MongoClient
 import json
 import sys
 
+# Código feito com ajuda do conrado!
+# https://github.com/tryber/sd-01-tech-news/tree/conradomedeiros-sd-01-tech-news
+
 
 def csv_exporter():
     raise NotImplementedError
