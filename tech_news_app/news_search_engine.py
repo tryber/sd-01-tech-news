@@ -63,3 +63,9 @@ def search_by_source(source):
     received_data = get_data_from_database({"sources": source})
     print("source", received_data)
     return received_data
+
+
+def search_by_category(categories):
+    received_data = get_data_from_database({"categories": categories})
+    print("categories", received_data)
+    return received_data
